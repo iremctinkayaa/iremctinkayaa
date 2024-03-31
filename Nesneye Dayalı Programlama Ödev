@@ -1,0 +1,51 @@
+package test;
+import java.util.Random;
+
+public class iro {
+
+	public static void main(String[] args) {
+		  for(int t=0;t<100;t++)
+		     {
+		     int matris [] [] = new int [2] [2] ;
+		        Random rastgele = new Random ();
+		        int [] sıralama = new int [4] ;
+		        for  (int i=0; i<2; i++)
+		        {
+		            for (int j=0; j<2; j++)
+		            {
+		                matris [i] [j] = rastgele.nextInt (100);
+
+		            }
+		        }
+
+		        for  (int i=0; i<2; i++)
+		        {
+		            sıralama [i] = matris [0] [i];
+		        }
+		            for (int j=0; j<2; j++)
+		            {
+		                sıralama [2+j] = matris [1] [j] ;
+
+		            }
+
+
+
+		        for (int i = 0; i < 3; i++) {
+		            for (int j = 0; j < 3 - i ; j++) {
+		                if (sıralama[j] > sıralama[j + 1 ] ) {
+
+
+		                    int tutma = sıralama[j];
+		                    sıralama[j] = sıralama[j + 1];
+		                    sıralama[j + 1] = tutma;
+		                }
+		            }
+		        }
+
+		        for (int i=0; i<4; i++)
+		        System.out.print(","+sıralama [i] );
+		        System.out.println();
+		        }
+		  }	
+
+	}
